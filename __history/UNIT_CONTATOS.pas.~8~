@@ -1,0 +1,90 @@
+unit UNIT_CONTATOS;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+  Tform1 = class(TForm)
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label1: TLabel;
+    txt_OBS: TMemo;
+    txt_ID: TEdit;
+    txt_NOME: TEdit;
+    txt_TELEFONE: TEdit;
+    txt_EMAIL: TEdit;
+    FDConnection1: TFDConnection;
+    FDContatos: TFDTable;
+    DataSource1: TDataSource;
+    btn_NOVO: TButton;
+    btn_SALVAR: TButton;
+    conexao: TLabel;
+    btn_AVANÇAR: TButton;
+    btn_ANTERIOR: TButton;
+    procedure carrega;
+    procedure FormCreate(Sender: TObject);
+    procedure btn_AVANÇARClick(Sender: TObject);
+    procedure btn_ANTERIORClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form1: Tform1;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tform1.btn_ANTERIORClick(Sender: TObject);
+begin
+fdcontatos.Prior;
+carrega;
+end;
+
+procedure Tform1.btn_AVANÇARClick(Sender: TObject);
+begin
+fdcontatos.Next;
+carrega;
+end;
+
+procedure Tform1.carrega;
+begin
+txt_ID.text         := fdcontatos.FieldByName('id').Value;
+txt_NOME.text       := fdcontatos.FieldByName('nome').Value;
+txt_EMAIL.text      := fdcontatos.FieldByName('email').Value;
+txt_TELEFONE.text   := fdcontatos.FieldByName('telefone').Value;
+if fdcontatos.FieldByName('observacoes').Value = Null then
+  txt_OBS.text := ''
+else
+  txt_OBS.text := fdcontatos.FieldByName('observacoes').Value;
+end;
+
+procedure Tform1.FormCreate(Sender: TObject);
+begin
+    fdconnection1.Params.Database := GetCurrentDir + '\assets\contatos.mdb';
+    fdconnection1.Connected := true;
+    fdcontatos.TableName := 'contatos';
+    fdcontatos.Active := true;
+
+    if fdconnection1.Connected = true then
+    begin
+      conexao.Caption := 'Conectado';
+      carrega;
+    end;
+end;
+end.
+

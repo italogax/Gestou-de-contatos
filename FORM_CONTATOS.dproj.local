@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/10/08 21:34:16.000.331,=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/10/08 22:35:46.000.651,C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\UNIT_CONTATOS.dfm=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/10/08 22:35:46.000.651,C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\UNIT_CONTATOS.pas=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/10/08 22:36:01.000.137,C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\FORM_CONTATOS.dproj=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/10/24 21:53:04.000.548,=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/10/24 21:53:21.000.688,=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/10/24 22:17:01.000.328,C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\UNIT_CONTATOS.dfm</Transaction>
+    <Transaction>2024/10/24 22:17:01.000.328,C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Ítalo\OneDrive\Documentos\Embarcadero\Studio\Projects\UNIT_CONTATOS.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Unit2.pas"/>
+    <File Path="Unit2.dfm"/>
+    <File Path="Unit1.pas"/>
+    <File Path="Unit1.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

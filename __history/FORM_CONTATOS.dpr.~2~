@@ -1,0 +1,14 @@
+program FORM_CONTATOS;
+
+uses
+  Vcl.Forms,
+  UNIT_CONTATOS in 'UNIT_CONTATOS.pas' {form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tform1, form1);
+  Application.Run;
+end.
